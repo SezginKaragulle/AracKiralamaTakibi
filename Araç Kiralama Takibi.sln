@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Araç Kiralama Takibi", "Araç Kiralama Takibi\Araç Kiralama Takibi.csproj", "{4EE8F3BA-38FB-485E-9EF2-2FB5D508C294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AracKiralamaWindowsService", "AracKiralamaWindowsService\AracKiralamaWindowsService.csproj", "{C2A33932-CC49-4B63-823B-D9615776C93C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AracKiralamaSetup", "AracKiralamaSetup\AracKiralamaSetup.vdproj", "{E60D0712-6D4F-4F0C-96E1-22506E4E417D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EE8F3BA-38FB-485E-9EF2-2FB5D508C294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE8F3BA-38FB-485E-9EF2-2FB5D508C294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE8F3BA-38FB-485E-9EF2-2FB5D508C294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE8F3BA-38FB-485E-9EF2-2FB5D508C294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A33932-CC49-4B63-823B-D9615776C93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A33932-CC49-4B63-823B-D9615776C93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A33932-CC49-4B63-823B-D9615776C93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A33932-CC49-4B63-823B-D9615776C93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60D0712-6D4F-4F0C-96E1-22506E4E417D}.Debug|Any CPU.ActiveCfg = Debug
+		{E60D0712-6D4F-4F0C-96E1-22506E4E417D}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0A3501F-3612-4007-9B36-51E24B84DAC0}
+	EndGlobalSection
+EndGlobal

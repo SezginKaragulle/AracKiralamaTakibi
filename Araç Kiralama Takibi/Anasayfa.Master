@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Anasayfa.master.cs" Inherits="Araç_Kiralama_Takibi.Anasayfa" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!– DİL AYARLARI –>
+<meta http-equiv=”Content-Language” content=”tr” />
+<!–dilin türkçe old. belirten tag–>
+<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+<!–charset=UTF-8 türkçe karakterlerin bulunduğu set–>
+    <title></title>
+    <link href="Css/CssStyle.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+    <header>
+      <nav>
+  <ul>
+    <li><a href="MusteriYonetimi.aspx">Müşteri Yönetimi</a></li>
+    <li><a href="#">Araç Yönetimi</a></li>
+    <li><a href="#">Bakım Yönetimi</a></li>
+    <li><a href="#">Sözleşme Yönetimi</a></li>
+    <li><a href="#">Gelir/Gider Yönetimi</a></li>
+    <li><a href="SistemYonetimi.aspx">Sistem Yönetimi</a></li>
+      <li><a href="Giriş.aspx">Çıkış</a></li>
+  </ul>
+</nav> 
+</header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />   
+<section>
+    <form id="form1" runat="server" align="center">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</section>
+
+</body>
+</html>
