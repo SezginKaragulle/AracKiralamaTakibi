@@ -70,12 +70,25 @@ namespace Araç_Kiralama_Takibi.Classes
 
         }
 
-        public void Customer_List_CustomerFilter(GridView dt_CustomersListGrd,string vr_CustomerID, string vr_CustomerTitle, int vr_CustomerTaxNumber)
+        //public void Customer_List_CustomerFilter(GridView dt_CustomersListGrd,string vr_CustomerID, string vr_CustomerTitle, int vr_CustomerTaxNumber)
+        //{
+        //    Db_Table = new DataTable();
+        //    Db_Table.Clear();
+        //    Db_Connection.Open();
+        //    Db_Adapter = new SqlDataAdapter("Exec CustomerFilter @Customer_ID='"+vr_CustomerID+ "',@Customer_Title='"+vr_CustomerTitle+ "',@Customer_TaxNumber='"+vr_CustomerTaxNumber+"'", Db_Connection);
+        //    Db_Adapter.Fill(Db_Table);
+        //    dt_CustomersListGrd.DataSource = Db_Table;
+        //    dt_CustomersListGrd.DataBind();
+        //    Db_Connection.Close();
+
+        //}
+
+        public void Customer_List_CustomerFilter(GridView dt_CustomersListGrd,string vr_FQuery)
         {
             Db_Table = new DataTable();
             Db_Table.Clear();
             Db_Connection.Open();
-            Db_Adapter = new SqlDataAdapter("Exec CustomerFilter @Customer_ID='"+vr_CustomerID+ "',@Customer_Title='"+vr_CustomerTitle+ "',@Customer_TaxNumber='"+vr_CustomerTaxNumber+"'", Db_Connection);
+            Db_Adapter = new SqlDataAdapter(vr_FQuery, Db_Connection);
             Db_Adapter.Fill(Db_Table);
             dt_CustomersListGrd.DataSource = Db_Table;
             dt_CustomersListGrd.DataBind();
