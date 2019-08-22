@@ -68,32 +68,10 @@ namespace Araç_Kiralama_Takibi
 
         protected void btnCustomerSearch_Click(object sender, EventArgs e)
         {
-            //CustomerOperations.Customer_List_CustomerFilter(grdCustomerList, txtCustomerId.Text.ToString(), txtCustomerName.Text.ToString(), int.Parse(txtCustomerTaxNumber.Text.ToString()));
-            if (txtCustomerId.Text != "")
-            {
-                CustomerOperations.Customer_List_CustomerFilter(grdCustomerList, "Select * From CustomersList Where CustomerID Like '%" + txtCustomerId.Text.Trim() + "%'");
-                txtCustomerId.Text = "";
-                txtCustomerName.Text = "";
-                txtCustomerTaxNumber.Text = "";
-            }
-            else if (txtCustomerName.Text != "")
-            {
-                CustomerOperations.Customer_List_CustomerFilter(grdCustomerList, "Select * From CustomersList Where CustomerTitle Like '%" + txtCustomerName.Text.Trim() + "%'");
-                txtCustomerId.Text = "";
-                txtCustomerName.Text = "";
-                txtCustomerTaxNumber.Text = "";
-            }
-            else if (txtCustomerTaxNumber.Text != "")
-            {
-                CustomerOperations.Customer_List_CustomerFilter(grdCustomerList, "Select * From CustomersList Where CustomerTaxNumber Like '%" + txtCustomerTaxNumber.Text.Trim() + "%'");
-                txtCustomerId.Text = "";
-                txtCustomerName.Text = "";
-                txtCustomerTaxNumber.Text = "";
-            }
-            else
-            {
-                CustomerOperations.Customer_List(grdCustomerList);
-            }
+            CustomerOperations.Customer_List_CustomerFilter(grdCustomerList, txtCustomerId.Text, txtCustomerName.Text, txtCustomerTaxNumber.Text);
+            txtCustomerId.Text = "";
+            txtCustomerName.Text = "";
+            txtCustomerTaxNumber.Text = "";
 
         }
     }
