@@ -14,6 +14,7 @@ namespace Araç_Kiralama_Takibi
         protected void Page_Load(object sender, EventArgs e)
         {
             CustomerOperations.Customer_List(grdCustomerList);
+           
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)

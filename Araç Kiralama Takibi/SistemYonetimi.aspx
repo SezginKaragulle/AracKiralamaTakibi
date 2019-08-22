@@ -6,7 +6,6 @@
 <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
 <!–charset=UTF-8 türkçe karakterlerin bulunduğu set–>
      <link href="Css/BtnStyle.css" rel="stylesheet" />
-    <link href="Css/GrdStyle.css" rel="stylesheet" />
     <link href="Css/textStyle.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
@@ -68,19 +67,30 @@
         <tr>
             <td colspan="3">
                 <asp:GridView ID="grdUsersList" runat="server" AllowPaging="True" OnPageIndexChanging="grdUsersList_PageIndexChanging" CssClass="mydatagrid" PagerStyle-CssClass="pager"
- HeaderStyle-CssClass="header" SelectedRowStyle-CssClass="selectedrow" OnSelectedIndexChanged="grdUsersList_SelectedIndexChanged" Width="1000px">
+ HeaderStyle-CssClass="header" SelectedRowStyle-CssClass="selectedrow" OnSelectedIndexChanged="grdUsersList_SelectedIndexChanged" Width="1000px" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                         <asp:ButtonField CommandName="Select" Text="Seç" ButtonType="Button" ControlStyle-CssClass="myButton">
 <ControlStyle CssClass="myButton"></ControlStyle>
 
                         <ItemStyle BackColor="White" />
                         </asp:ButtonField>
+                        <asp:BoundField DataField="UserId" HeaderText="Kullanıcı Numarası" />
+                        <asp:BoundField DataField="UserCode" HeaderText="Kullanıcı Kodu" />
+                        <asp:BoundField DataField="UserNameSurName" HeaderText="Adı Soyadı" />
+                        <asp:BoundField DataField="UserDepartment" HeaderText="Departman" />
+                        <asp:BoundField DataField="UserTelephone" HeaderText="Telefon Numarası" />
+                        <asp:BoundField DataField="UserMail" HeaderText="E-Mail" />
                     </Columns>
-<HeaderStyle CssClass="header"></HeaderStyle>
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+<HeaderStyle CssClass="header" BackColor="#333333" Font-Bold="True" ForeColor="White"></HeaderStyle>
 
-<PagerStyle CssClass="pager"></PagerStyle>
+<PagerStyle CssClass="pager" BackColor="White" ForeColor="Black" HorizontalAlign="Right"></PagerStyle>
 
-<SelectedRowStyle CssClass="selectedrow"></SelectedRowStyle>
+<SelectedRowStyle CssClass="selectedrow" BackColor="#CC3333" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </td>
             <td>

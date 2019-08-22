@@ -33,6 +33,7 @@ namespace Araç_Kiralama_Takibi.Classes
             dt_CustomersListGrd.DataSource = Db_Table;
             dt_CustomersListGrd.DataBind();
             Db_Connection.Close();
+            
 
         }
 
