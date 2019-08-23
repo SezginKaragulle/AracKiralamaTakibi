@@ -86,7 +86,7 @@
 
 <PagerStyle CssClass="pager" BackColor="White" ForeColor="Black" HorizontalAlign="Right"></PagerStyle>
 
-<SelectedRowStyle CssClass="selectedrow" BackColor="#CC3333" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+<SelectedRowStyle CssClass="selectedrow" BackColor="#ff6e00" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
                     <SortedAscendingCellStyle BackColor="#F7F7F7" />
                     <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />

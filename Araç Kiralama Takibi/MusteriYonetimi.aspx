@@ -19,7 +19,7 @@
                 
             </td>
             <td>
-                <asp:Button ID="btnCustomerUpdate" runat="server" Text="Güncelle" Width = "125px" CssClass="myButton" OnClick="btnCustomerUpdate_Click" style="height: 42px"/>
+                <asp:Button ID="btnCustomerUpdate" runat="server" Text="Güncelle" Width = "125px" CssClass="myButton" OnClick="btnCustomerUpdate_Click" />
             </td>
                <td>
                 
@@ -92,7 +92,7 @@
 
 <PagerStyle CssClass="pager" BackColor="White" ForeColor="Black" HorizontalAlign="Right"></PagerStyle>
 
-<SelectedRowStyle CssClass="selectedrow" BackColor="#CC3333" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+<SelectedRowStyle CssClass="selectedrow" BackColor="#ff6e00" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
                     <SortedAscendingCellStyle BackColor="#F7F7F7" />
                     <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
