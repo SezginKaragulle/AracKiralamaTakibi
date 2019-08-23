@@ -19,5 +19,10 @@ namespace Araç_Kiralama_Takibi
         {
 
         }
+
+        protected void grdVehicleList_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
     }
 }
