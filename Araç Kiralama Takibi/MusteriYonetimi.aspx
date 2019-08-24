@@ -69,7 +69,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <asp:GridView ID="grdCustomerList" runat="server" AllowPaging="True"  CssClass="mydatagrid" PagerStyle-CssClass="pager"
+                <asp:GridView ID="grdCustomerList" runat="server" AllowPaging="True" PageSize="10"  CssClass="mydatagrid" PagerStyle-CssClass="pager"
  HeaderStyle-CssClass="header" SelectedRowStyle-CssClass="selectedrow"  Width="1000px" OnSelectedIndexChanged="grdCustomerList_SelectedIndexChanged1" OnPageIndexChanging="grdCustomerList_PageIndexChanging" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                         <asp:ButtonField CommandName="Select" Text="Seç" ButtonType="Button" ControlStyle-CssClass="myButton">

@@ -13,7 +13,20 @@ namespace Araç_Kiralama_Takibi
         private int Vr_Selected_Row;
         protected void Page_Load(object sender, EventArgs e)
         {
-            CustomerOperations.Customer_List(grdCustomerList);
+            if (!IsPostBack)
+            {
+                Session.Add("Vr_CustomerID", "");
+                Session.Add("Vr_CustomerTitle", "");
+                Session.Add("Vr_CustomerProvince", "");
+                Session.Add("Vr_CustomerDistrict", "");
+                Session.Add("Vr_CustomerAddress", "");
+                Session.Add("Vr_CustomerTaxAdministration", "");
+                Session.Add("Vr_CustomerTaxNumber", "");
+                Session.Add("Vr_CustomerTelephone", "");
+                Session.Add("Vr_CustomerEMail", "");
+                CustomerOperations.Customer_List(grdCustomerList);
+            }
+            
            
         }
 
@@ -25,6 +38,8 @@ namespace Araç_Kiralama_Takibi
 
         protected void grdCustomerList_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            grdCustomerList.PageIndex = e.NewPageIndex;
+            CustomerOperations.Customer_List(grdCustomerList);
 
         }
 
@@ -34,15 +49,26 @@ namespace Araç_Kiralama_Takibi
         {
             Vr_Selected_Row = grdCustomerList.SelectedIndex;
             GridViewRow row = grdCustomerList.Rows[Vr_Selected_Row];
-            Session.Add("Vr_CustomerID", row.Cells[1].Text);
-            Session.Add("Vr_CustomerTitle", row.Cells[2].Text);
-            Session.Add("Vr_CustomerProvince", row.Cells[3].Text);
-            Session.Add("Vr_CustomerDistrict", row.Cells[4].Text);
-            Session.Add("Vr_CustomerAddress", row.Cells[5].Text);
-            Session.Add("Vr_CustomerTaxAdministration", row.Cells[6].Text);
-            Session.Add("Vr_CustomerTaxNumber", row.Cells[7].Text);
-            Session.Add("Vr_CustomerTelephone", row.Cells[8].Text);
-            Session.Add("Vr_CustomerEMail", row.Cells[9].Text);
+            //Session.Add("Vr_CustomerID", row.Cells[1].Text);
+            //Session.Add("Vr_CustomerTitle", row.Cells[2].Text);
+            //Session.Add("Vr_CustomerProvince", row.Cells[3].Text);
+            //Session.Add("Vr_CustomerDistrict", row.Cells[4].Text);
+            //Session.Add("Vr_CustomerAddress", row.Cells[5].Text);
+            //Session.Add("Vr_CustomerTaxAdministration", row.Cells[6].Text);
+            //Session.Add("Vr_CustomerTaxNumber", row.Cells[7].Text);
+            //Session.Add("Vr_CustomerTelephone", row.Cells[8].Text);
+            //Session.Add("Vr_CustomerEMail", row.Cells[9].Text);
+            Session["Vr_CustomerID"] = row.Cells[1].Text;
+            Session["Vr_CustomerTitle"] = row.Cells[2].Text;
+            Session["Vr_CustomerProvince"] = row.Cells[3].Text;
+            Session["Vr_CustomerDistrict"] = row.Cells[4].Text;
+            Session["Vr_CustomerAddress"] = row.Cells[5].Text;
+            Session["Vr_CustomerTaxAdministration"] = row.Cells[6].Text;
+            Session["Vr_CustomerTaxNumber"] = row.Cells[7].Text;
+            Session["Vr_CustomerTelephone"] = row.Cells[8].Text;
+            Session["Vr_CustomerEMail"] = row.Cells[9].Text;
+
+
         }
 
    
@@ -55,8 +81,16 @@ namespace Araç_Kiralama_Takibi
 
         protected void btnCustomerUpdate_Click(object sender, EventArgs e)
         {
-            Session.Add("Vr_Data", "CustomerUpdate");
-            Response.Redirect("MusteriEkleGuncelle.aspx");
+            if (Session["Vr_CustomerID"].ToString() == "")
+            {
+                Response.Write("<script lang='JavaScript'> alert ('Müşteri Seçmelisiniz.');</script>");
+            }
+            else
+            {
+                Session.Add("Vr_Data", "CustomerUpdate");
+                Response.Redirect("MusteriEkleGuncelle.aspx");
+            }
+            
         }
 
         protected void btnCustomerDelete_Click(object sender, EventArgs e)

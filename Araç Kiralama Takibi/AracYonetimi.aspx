@@ -13,25 +13,25 @@
     <table>
           <tr>
             <td>
-                <asp:Button ID="btnVehicleAdd" runat="server" Text="Ekle" Width = "125px" CssClass="myButton"  />
+                <asp:Button ID="btnVehicleAdd" runat="server" Text="Ekle" Width = "125px" CssClass="myButton" OnClick="btnVehicleAdd_Click"  />
             </td>
               <td>
                 
             </td>
             <td>
-                <asp:Button ID="btnVehicleUpdate" runat="server" Text="Güncelle" Width = "125px" CssClass="myButton" />
+                <asp:Button ID="btnVehicleUpdate" runat="server" Text="Güncelle" Width = "125px" CssClass="myButton" OnClick="btnVehicleUpdate_Click" />
             </td>
                <td>
                 
             </td>
             <td>
-                <asp:Button ID="btnVehicleDelete" runat="server" Text="Sil" Width = "125px" CssClass="myButton" />
+                <asp:Button ID="btnVehicleDelete" runat="server" Text="Sil" Width = "125px" CssClass="myButton" OnClick="btnVehicleDelete_Click" />
             </td>
                <td>
                 
             </td>
             <td>
-               <asp:Button ID="btnVehicleSearch" runat="server" Text="Ara" Width = "125px" CssClass="myButton" /></td>
+               <asp:Button ID="btnVehicleSearch" runat="server" Text="Ara" Width = "125px" CssClass="myButton" OnClick="btnVehicleSearch_Click" /></td>
                <td>
                 
             </td>
@@ -63,7 +63,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <asp:GridView ID="grdVehicleList" runat="server" AllowPaging="True"  CssClass="mydatagrid" PagerStyle-CssClass="pager"
+                <asp:GridView ID="grdVehicleList" runat="server" AllowPaging="True" PageSize="10" CssClass="mydatagrid" PagerStyle-CssClass="pager"
  HeaderStyle-CssClass="header" SelectedRowStyle-CssClass="selectedrow"  Width="1000px"  AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="grdVehicleList_SelectedIndexChanged" OnPageIndexChanging="grdVehicleList_PageIndexChanging">
                     <Columns>
                         <asp:ButtonField CommandName="Select" Text="Seç" ButtonType="Button" ControlStyle-CssClass="myButton">
