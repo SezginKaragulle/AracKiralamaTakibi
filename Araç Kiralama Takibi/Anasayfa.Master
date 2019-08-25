@@ -21,7 +21,6 @@
   <ul>
     <li><a href="MusteriYonetimi.aspx">Müşteri Yönetimi</a></li>
     <li><a href="AracYonetimi.aspx">Araç Yönetimi</a></li>
-    <li><a href="#">Bakım Yönetimi</a></li>
     <li><a href="#">Sözleşme Yönetimi</a></li>
     <li><a href="#">Gelir/Gider Yönetimi</a></li>
     <li><a href="SistemYonetimi.aspx">Sistem Yönetimi</a></li>
