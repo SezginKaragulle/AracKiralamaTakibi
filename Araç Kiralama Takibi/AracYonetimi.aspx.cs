@@ -96,8 +96,16 @@ namespace Araç_Kiralama_Takibi
 
         protected void btnVehicleDelete_Click(object sender, EventArgs e)
         {
-            VehicleOperations.Vehicle_Delete(Session["Vr_VehicleID"].ToString(), this.Context);
-            VehicleOperations.Vehicle_List(grdVehicleList);
+            if (Session["Vr_VehicleID"].ToString() == "")
+            {
+                Response.Write("<script lang='JavaScript'> alert ('Araç Seçmelisiniz.');</script>");
+            }
+            else
+            {
+                VehicleOperations.Vehicle_Delete(Session["Vr_VehicleID"].ToString(), this.Context);
+                VehicleOperations.Vehicle_List(grdVehicleList);
+            }
+            
         }
 
         protected void btnVehicleSearch_Click(object sender, EventArgs e)

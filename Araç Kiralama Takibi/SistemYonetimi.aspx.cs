@@ -93,10 +93,17 @@ namespace Araç_Kiralama_Takibi
 
         protected void btnUserDel_Click1(object sender, EventArgs e)
         {
-           
-            
+            if (Session["Vr_UserID"].ToString() == "")
+            {
+                Response.Write("<script lang='JavaScript'> alert ('Kullanıcı Seçmelisiniz.');</script>");
+            }
+            else
+            {
                 User_Operations.User_Delete(Session["Vr_UserID"].ToString(), this.Context);
                 User_Operations.User_List(grdUsersList);
+            }
+
+           
             
             
         }

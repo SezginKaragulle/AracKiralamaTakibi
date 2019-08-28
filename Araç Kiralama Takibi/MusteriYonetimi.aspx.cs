@@ -95,9 +95,17 @@ namespace Araç_Kiralama_Takibi
 
         protected void btnCustomerDelete_Click(object sender, EventArgs e)
         {
+            if (Session["Vr_CustomerID"].ToString() == "")
+            {
+                Response.Write("<script lang='JavaScript'> alert ('Müşteri Seçmelisiniz.');</script>");
+            }
+            else
+            {
+                CustomerOperations.Customer_Delete(Session["Vr_CustomerID"].ToString(), this.Context);
+                CustomerOperations.Customer_List(grdCustomerList);
+            }
 
-            CustomerOperations.Customer_Delete(Session["Vr_CustomerID"].ToString(), this.Context);
-            CustomerOperations.Customer_List(grdCustomerList);
+           
 
         }
 

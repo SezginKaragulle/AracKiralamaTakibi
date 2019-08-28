@@ -83,6 +83,8 @@
     <Content Include="Css\CssStyle.css" />
     <Content Include="Css\GrdStyle.css" />
     <Content Include="Css\textStyle.css" />
+    <Content Include="GelirGiderEkleGuncelle.aspx" />
+    <Content Include="GelirGiderYonetimi.aspx" />
     <Content Include="Giriş.aspx" />
     <Content Include="Global.asax" />
     <Content Include="KullaniciEkleGuncelle.aspx" />
@@ -167,8 +169,23 @@
     </Compile>
     <Compile Include="Classes\Customer_Operations.cs" />
     <Compile Include="Classes\DbConnection.cs" />
+    <Compile Include="Classes\RevenuesExpenses_Operations.cs" />
     <Compile Include="Classes\User_Operations.cs" />
     <Compile Include="Classes\Vehicle_Operations.cs" />
+    <Compile Include="GelirGiderEkleGuncelle.aspx.cs">
+      <DependentUpon>GelirGiderEkleGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GelirGiderEkleGuncelle.aspx.designer.cs">
+      <DependentUpon>GelirGiderEkleGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GelirGiderYonetimi.aspx.cs">
+      <DependentUpon>GelirGiderYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GelirGiderYonetimi.aspx.designer.cs">
+      <DependentUpon>GelirGiderYonetimi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Giriş.aspx.cs">
       <DependentUpon>Giriş.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
