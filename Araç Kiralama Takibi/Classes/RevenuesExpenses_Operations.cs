@@ -69,5 +69,21 @@ namespace Araç_Kiralama_Takibi.Classes
             Db_Connection.Close();
 
         }
+
+        public void RevenuesExpenses_Filter(GridView dt_RevenuesExpensesListGrd, string vr_VoucherNumber, string vr_VoucherExplanation)
+        {
+            Db_Table = new DataTable();
+            Db_Table.Clear();
+            Db_Connection.Open();
+            Db_Adapter = new SqlDataAdapter("Exec RevenuesExpensesFilter @Voucher_Number='" + vr_VoucherNumber + "',@Voucher_Explanation='"+vr_VoucherExplanation+"'", Db_Connection);
+            Db_Adapter.Fill(Db_Table);
+            dt_RevenuesExpensesListGrd.DataSource = Db_Table;
+            dt_RevenuesExpensesListGrd.DataBind();
+            Db_Connection.Close();
+
+
+        }
+
+
     }
 }

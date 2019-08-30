@@ -86,5 +86,12 @@ namespace Araç_Kiralama_Takibi
             Session.Add("Vr_Data", "RevenuesExpensesAdd");
             Response.Redirect("GelirGiderEkleGuncelle.aspx");
         }
+
+        protected void btnRevenuesExpensesSearch_Click(object sender, EventArgs e)
+        {
+            RevenuesExpenses_Operations.RevenuesExpenses_Filter(grdRevenuesExpensesList, txtVoucherNumber.Text, txtVoucherExplanation.Text);
+            txtVoucherNumber.Text = "";
+            txtVoucherExplanation.Text = "";
+        }
     }
 }

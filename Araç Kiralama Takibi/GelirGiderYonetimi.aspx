@@ -31,7 +31,7 @@
                 
             </td>
             <td>
-               <asp:Button ID="btnRevenuesExpensesSearch" runat="server" Text="Ara" Width = "125px" CssClass="myButton"/></td>
+               <asp:Button ID="btnRevenuesExpensesSearch" runat="server" Text="Ara" Width = "125px" CssClass="myButton" OnClick="btnRevenuesExpensesSearch_Click"/></td>
                <td>
                 
             </td>
