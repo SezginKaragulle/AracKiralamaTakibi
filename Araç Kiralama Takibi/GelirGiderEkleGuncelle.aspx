@@ -60,7 +60,6 @@
             </td>
             <td class="auto-style3">
                 <asp:DropDownList ID="drpVoucherCurrency" runat="server" Width="162px" CssClass="css-input">
-                    <asp:ListItem></asp:ListItem>
                     <asp:ListItem>TL</asp:ListItem>
                     <asp:ListItem>USD</asp:ListItem>
                     <asp:ListItem>EUR</asp:ListItem>
@@ -74,9 +73,8 @@
             </td>
             <td>
                 <asp:DropDownList ID="drpVoucherCreditDebt" runat="server" Width="162px" CssClass="css-input">
-                    <asp:ListItem></asp:ListItem>
                     <asp:ListItem>Alacak</asp:ListItem>
-                    <asp:ListItem>Borç</asp:ListItem>
+                    <asp:ListItem>Borc</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>

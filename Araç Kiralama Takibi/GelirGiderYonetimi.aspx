@@ -37,14 +37,14 @@
             </td>
               
                <td>
-                   <asp:TextBox ID="txtVoucherNumber" placeholder="Kullanıcı Kodu" runat="server" class="css-input"></asp:TextBox> 
+                   <asp:TextBox ID="txtVoucherNumber" placeholder="Fiş No" runat="server" class="css-input"></asp:TextBox> 
             </td>
                <td>
                 
             </td>
              
                <td>
-                   <asp:TextBox ID="txtVoucherExplanation" placeholder="Ad-Soyad" runat="server" class="css-input"></asp:TextBox>
+                   <asp:TextBox ID="txtVoucherExplanation" placeholder="Fiş Açıklaması" runat="server" class="css-input"></asp:TextBox>
             </td>
         </tr>
     </table>
@@ -61,7 +61,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <asp:GridView ID="grdRevenuesExpensesList" runat="server" AllowPaging="True" PageSize="10" OnPageIndexChanging="grdRevenuesExpensesList_PageIndexChanging" CssClass="mydatagrid" PagerStyle-CssClass="pager"
+                <asp:GridView ID="grdRevenuesExpensesList" runat="server" AllowPaging="True" OnPageIndexChanging="grdRevenuesExpensesList_PageIndexChanging" CssClass="mydatagrid" PagerStyle-CssClass="pager"
  HeaderStyle-CssClass="header" SelectedRowStyle-CssClass="selectedrow" OnSelectedIndexChanged="grdRevenuesExpensesList_SelectedIndexChanged" Width="1000px" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                         <asp:ButtonField CommandName="Select" Text="Seç" ButtonType="Button" ControlStyle-CssClass="myButton">

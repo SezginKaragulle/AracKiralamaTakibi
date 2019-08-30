@@ -11,7 +11,7 @@ namespace Araç_Kiralama_Takibi.Classes
 {
     public class RevenuesExpenses_Operations:DbConnection
     {
-        public DateTime P_Voucher_Date { get; set; }
+        public string P_Voucher_Date { get; set; }
 
         public string P_Voucher_Explanation { get; set; }
 
@@ -37,13 +37,35 @@ namespace Araç_Kiralama_Takibi.Classes
 
         }
 
-        public void RevenuesExpenses_Add(DateTime vr_VoucherDate, string vr_VoucherExplanation, int vr_VoucherAmount,string vr_VoucherCurrency,string vr_VoucherCreditDebt,int vr_VoucherPositionCode, HttpContext vr_Context)
+        public void RevenuesExpenses_Add(string vr_VoucherDate, string vr_VoucherExplanation, int vr_VoucherAmount,string vr_VoucherCurrency,string vr_VoucherCreditDebt,int vr_VoucherPositionCode, HttpContext vr_Context)
         {
             Db_Connection.Open();
             Db_Query.Connection = Db_Connection;
             Db_Query.CommandText = "Exec RevenuesExpensesAdd @Voucher_Date='"+vr_VoucherDate+ "',@Voucher_Explanation='"+vr_VoucherExplanation+ "',@Voucher_Amount='"+vr_VoucherAmount+ "',@Voucher_Currency='"+vr_VoucherCurrency+ "',@Voucher_CreditDebt='"+vr_VoucherCreditDebt+ "',@Voucher_PositionCode='"+vr_VoucherPositionCode+"'";
             Db_Query.ExecuteNonQuery();
             vr_Context.Response.Write("<script lang='JavaScript'> alert ('Fiş Eklendi.');</script>");
+            Db_Connection.Close();
+
+        }
+
+        public void RevenuesExpenses_Update(string vr_VoucherNumber,string vr_VoucherDate, string vr_VoucherExplanation, int vr_VoucherAmount, string vr_VoucherCurrency, string vr_VoucherCreditDebt, int vr_VoucherPositionCode, HttpContext vr_Context)
+        {
+            Db_Connection.Open();
+            Db_Query.Connection = Db_Connection;
+            Db_Query.CommandText = "Exec RevenuesExpensesUpdate @Voucher_Number='"+vr_VoucherNumber+"',@Voucher_Date='" + vr_VoucherDate + "',@Voucher_Explanation='" + vr_VoucherExplanation + "',@Voucher_Amount='" + vr_VoucherAmount + "',@Voucher_Currency='" + vr_VoucherCurrency + "',@Voucher_CreditDebt='" + vr_VoucherCreditDebt + "',@Voucher_PositionCode='" + vr_VoucherPositionCode + "'";
+            Db_Query.ExecuteNonQuery();
+            vr_Context.Response.Write("<script lang='JavaScript'> alert ('Fiş Güncellendi.');</script>");
+            Db_Connection.Close();
+
+        }
+
+        public void RevenuesExpenses_Delete(string vr_VoucherNumber, HttpContext vr_Context)
+        {
+            Db_Connection.Open();
+            Db_Query.Connection = Db_Connection;
+            Db_Query.CommandText = "Exec RevenuesExpensesDel @Voucher_Number='" + vr_VoucherNumber + "'";
+            Db_Query.ExecuteNonQuery();
+            vr_Context.Response.Write("<script lang='JavaScript'> alert ('Fiş Silindi.');</script>");
             Db_Connection.Close();
 
         }

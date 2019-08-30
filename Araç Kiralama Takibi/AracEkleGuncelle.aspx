@@ -72,7 +72,6 @@
             </td>
             <td>
                 <asp:DropDownList ID="drpVehicleGear" runat="server" Width="162px" CssClass="css-input">
-                    <asp:ListItem></asp:ListItem>
                     <asp:ListItem>Manuel</asp:ListItem>
                     <asp:ListItem>Otomatik</asp:ListItem>
                     <asp:ListItem>Yarı Otomatik</asp:ListItem>
@@ -101,7 +100,6 @@
             </td>
             <td>
                 <asp:DropDownList ID="drpVehicleFuelType" runat="server" Width="162px" CssClass="css-input">
-                    <asp:ListItem></asp:ListItem>
                     <asp:ListItem>Benzinli</asp:ListItem>
                     <asp:ListItem>Dizel</asp:ListItem>
                     <asp:ListItem>Elektrikli</asp:ListItem>
@@ -122,7 +120,6 @@
             </td>
             <td>
                 <asp:DropDownList ID="drpVehicleStatus" runat="server" Width="162px" CssClass="css-input">
-                    <asp:ListItem></asp:ListItem>
                     <asp:ListItem>Uygun</asp:ListItem>
                     <asp:ListItem>Kiralandı</asp:ListItem>
                     <asp:ListItem>Satıldı</asp:ListItem>

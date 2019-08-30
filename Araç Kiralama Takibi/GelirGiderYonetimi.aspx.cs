@@ -75,7 +75,9 @@ namespace Araç_Kiralama_Takibi
             }
             else
             {
-
+                RevenuesExpenses_Operations.RevenuesExpenses_Delete(Session["Vr_VoucherNumber"].ToString(), this.Context);
+                RevenuesExpenses_Operations.RevenuesExpenses_List(grdRevenuesExpensesList);
+                Response.Redirect("GelirGiderYonetimi.aspx");
             }
         }
 
