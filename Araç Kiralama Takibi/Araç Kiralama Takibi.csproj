@@ -127,6 +127,8 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="SistemYonetimi.aspx" />
+    <Content Include="SozlesmeEkleGuncelle.aspx" />
+    <Content Include="SozlesmeYonetimi.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -167,6 +169,7 @@
     <Compile Include="AracYonetimi.aspx.designer.cs">
       <DependentUpon>AracYonetimi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Contract_Operations.cs" />
     <Compile Include="Classes\Customer_Operations.cs" />
     <Compile Include="Classes\DbConnection.cs" />
     <Compile Include="Classes\RevenuesExpenses_Operations.cs" />
@@ -224,6 +227,20 @@
     </Compile>
     <Compile Include="SistemYonetimi.aspx.designer.cs">
       <DependentUpon>SistemYonetimi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SozlesmeEkleGuncelle.aspx.cs">
+      <DependentUpon>SozlesmeEkleGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SozlesmeEkleGuncelle.aspx.designer.cs">
+      <DependentUpon>SozlesmeEkleGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SozlesmeYonetimi.aspx.cs">
+      <DependentUpon>SozlesmeYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SozlesmeYonetimi.aspx.designer.cs">
+      <DependentUpon>SozlesmeYonetimi.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
