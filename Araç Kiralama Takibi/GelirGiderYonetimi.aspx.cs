@@ -71,7 +71,7 @@ namespace Araç_Kiralama_Takibi
             }
             else if (Session["Vr_VoucherPositionCode"].ToString() == "2")
             {
-                Response.Write("<script lang='JavaScript'> alert ('Fiş Sözleşme Kaydına Ait Buradan Güncellenemez.');</script>");
+                Response.Write("<script lang='JavaScript'> alert ('Fiş Sözleşme Kaydına Ait Buradan Silinemez.');</script>");
             }
             else
             {

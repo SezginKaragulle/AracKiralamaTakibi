@@ -15,5 +15,16 @@ namespace Araç_Kiralama_Takibi.Classes
         public  SqlDataAdapter Db_Adapter;
         public  SqlDataReader Db_DataReader;
         public  DataTable Db_Table = new DataTable();
+
+        public void Query_Send(string vr_Query)
+        {
+            Db_Connection.Open();
+            Db_Query.Connection = Db_Connection;
+            Db_Query.CommandText = vr_Query;
+            Db_Query.ExecuteNonQuery();
+            Db_Connection.Close();
+        }
     }
+
+ 
 }

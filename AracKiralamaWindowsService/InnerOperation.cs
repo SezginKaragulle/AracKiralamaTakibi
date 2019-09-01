@@ -21,7 +21,7 @@ namespace AracKiralamaWindowsService
         public DataTable Db_Table = new DataTable();
 
         System.Timers.Timer timer = new System.Timers.Timer();
-
+        private int Last_Counts;
         public void Db_User_Update()
         {
             try
@@ -42,7 +42,30 @@ namespace AracKiralamaWindowsService
             }
         }
 
+        public void Contract_Vehicle_Update()
+        {
+             try
+            {
+                Console.WriteLine("Servis Başladı.");
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Başladı");
+                Db_Connection.Open();
+                Db_Query.Connection = Db_Connection;
+                Db_Query.CommandText = "exec Contract_Count @Update_Time=''";
+                Db_DataReader = Db_Query.ExecuteReader();
+                while (Db_DataReader.Read())
+                {
+                    Last_Counts = int.Parse(Db_DataReader[0].ToString());
 
+                }
+
+                
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Bitti");
+            }
+            catch (Exception ex)
+            {
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", ex.Message + " " + ex.StackTrace);
+            }
+        }
        
         public void Start()
         {

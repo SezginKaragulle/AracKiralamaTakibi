@@ -19,24 +19,24 @@
                 
             </td>
             <td>
-                <asp:Button ID="btnContractUpdate" runat="server" Text="Güncelle" Width = "125px" CssClass="myButton"/>
+                <asp:Button ID="btnContractUpdate" runat="server" Text="Güncelle" Width = "125px" CssClass="myButton" OnClick="btnContractUpdate_Click"/>
             </td>
                <td>
                 
             </td>
             <td>
-                <asp:Button ID="btnContractDel" runat="server" Text="Sil" Width = "125px" CssClass="myButton"/>
+                <asp:Button ID="btnContractDel" runat="server" Text="Sil" Width = "125px" CssClass="myButton" OnClick="btnContractDel_Click"/>
             </td>
                <td>
                 
             </td>
             <td>
-               <asp:Button ID="btnContractSearch" runat="server" Text="Ara" Width = "125px" CssClass="myButton"/></td>
+               <asp:Button ID="btnContractSearch" runat="server" Text="Ara" Width = "125px" CssClass="myButton" OnClick="btnContractSearch_Click"/></td>
                <td>
                 
             </td>
                <td>
-                <asp:Button ID="btnVoucherSend" runat="server" Text="Mahsup" Width = "125px" CssClass="myButton"/></td>
+                <asp:Button ID="btnVoucherSend" runat="server" Text="Mahsup" Width = "125px" CssClass="myButton" OnClick="btnVoucherSend_Click"/></td>
             </td>
                <td>
                 
@@ -67,7 +67,7 @@
         <tr>
             <td colspan="3">
                 <asp:GridView ID="grdContractsList" runat="server" AllowPaging="True" PageSize="10" CssClass="mydatagrid" PagerStyle-CssClass="pager"
- HeaderStyle-CssClass="header" SelectedRowStyle-CssClass="selectedrow" Width="1000px" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="grdContractsList_SelectedIndexChanged">
+ HeaderStyle-CssClass="header" SelectedRowStyle-CssClass="selectedrow" Width="1000px" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="grdContractsList_SelectedIndexChanged" OnPageIndexChanging="grdContractsList_PageIndexChanging">
                     <Columns>
                         <asp:ButtonField CommandName="Select" Text="Seç" ButtonType="Button" ControlStyle-CssClass="myButton">
 <ControlStyle CssClass="myButton"></ControlStyle>
@@ -88,6 +88,10 @@
                         <asp:BoundField DataField="CustomerRepresentative" HeaderText="Müşteri Temsilcisi" />
                         <asp:BoundField DataField="AccountingStatus" HeaderText="Muhasebe Durumu" />
                         <asp:BoundField DataField="VoucherNo" HeaderText="Fiş No" />
+                        <asp:BoundField DataField="ContractStatus" HeaderText="Sözleşme Durumu" />
+                        <asp:BoundField DataField="ContractAmount" HeaderText="Sözleşme Tutarı" />
+                        <asp:BoundField DataField="ContractCurrency" HeaderText="Sözleşme Dövizi" />
+
                     </Columns>
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
 <HeaderStyle CssClass="header" BackColor="#333333" Font-Bold="True" ForeColor="White"></HeaderStyle>
