@@ -57,8 +57,31 @@ namespace AracKiralamaWindowsService
                     Last_Counts = int.Parse(Db_DataReader[0].ToString());
 
                 }
+                string[] plakalar = new string[Last_Counts];
+                SqlCommand VehiclePlate = new SqlCommand();
+                VehiclePlate.Connection = Db_Connection;
+                VehiclePlate.CommandText = "select VehiclePlate from ContractsList";
+                Db_DataReader = VehiclePlate.ExecuteReader();
+                while (Db_DataReader.Read())
+                {
+                    for (int i = 0; i < Last_Counts; i++)
+                    {
+                        plakalar[i] = Db_DataReader[0].ToString();
+                        SqlCommand Vehicle_Update = new SqlCommand();
+                        Vehicle_Update.Connection = Db_Connection;
+                        Vehicle_Update.CommandText = "UPDATE VehicleList SET VehicleStatus='Uygun' Where VehiclePlate='" + plakalar[i].ToString() + "'";
+                        Vehicle_Update.ExecuteNonQuery();
+                    }
 
-                
+                }
+                SqlCommand Contract_Update = new SqlCommand();
+                Contract_Update.Connection = Db_Connection;
+                Contract_Update.CommandText = "exec Contract_Count @Update_Time='Evet'";
+                Contract_Update.ExecuteNonQuery();
+                Db_Connection.Close();
+                Db_DataReader.Close();
+
+
                 System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Bitti");
             }
             catch (Exception ex)
@@ -80,7 +103,8 @@ namespace AracKiralamaWindowsService
         }
         private void OnElapsedTime(object source, ElapsedEventArgs e)
         {
-            Db_User_Update();
+            //Db_User_Update();
+            Contract_Vehicle_Update();
         }
 
 

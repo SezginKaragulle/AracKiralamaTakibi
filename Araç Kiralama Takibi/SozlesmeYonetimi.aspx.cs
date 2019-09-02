@@ -87,6 +87,14 @@ namespace Araç_Kiralama_Takibi
             {
                 btnVoucherSend.Text = "Mahsup";
             }
+            //if (Session["Vr_ContractStatus"].ToString() == "Aktif")
+            //{
+            //    btnContractActivePas.Text = "Pasif";
+            //}
+            //else if (Session["Vr_ContractStatus"].ToString() == "Pasif")
+            //{
+            //    btnContractActivePas.Text = "Aktif";
+            //}
         }
 
         protected void btnContractUpdate_Click(object sender, EventArgs e)
@@ -168,6 +176,24 @@ namespace Araç_Kiralama_Takibi
             Contract_Operations.Contract_List_VehicleFilter(grdContractsList, txtContractCode.Text, txtContractNo.Text);
             txtContractCode.Text = "";
             txtContractNo.Text = "";
+        }
+
+        protected void btnContractActivePas_Click(object sender, EventArgs e)
+        {
+            if (Session["Vr_ContractNo"].ToString() == "")
+            {
+                Response.Write("<script lang='JavaScript'> alert ('Sözleşme Seçmelisiniz.');</script>");
+            }
+            else if (Session["Vr_ContractStatus"].ToString() == "Pasif")
+            {
+                Response.Write("<script lang='JavaScript'> alert ('Sözleşme Durumu Aktif Olmalı.');</script>");
+            }
+            else
+            {
+                Contract_Operations.Query_Send("Update VehicleList SET VehicleStatus='Kiralık' Where VehiclePlate='" + Session["Vr_VehiclePlate"].ToString() + "'");
+                Contract_Operations.Query_Send("Update ContractsList SET ContractStatus='Pasif' Where ContractID='" + Session["Vr_ContractID"].ToString() + "'");
+                Response.Redirect("SozlesmeYonetimi.aspx");
+            }
         }
     }
 }

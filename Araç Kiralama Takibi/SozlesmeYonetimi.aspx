@@ -41,6 +41,12 @@
                <td>
                 
             </td>
+                 <td>
+                <asp:Button ID="btnContractActivePas" runat="server" Text="Pasif" Width = "125px" CssClass="myButton" OnClick="btnContractActivePas_Click"/></td>
+            </td>
+                 <td>
+                
+            </td>
                <td>
                    <asp:TextBox ID="txtContractCode" placeholder="Sözleşme Kodu" runat="server" class="css-input"></asp:TextBox> 
             </td>
