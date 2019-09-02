@@ -22,6 +22,7 @@ namespace AracKiralamaWindowsService
 
         System.Timers.Timer timer = new System.Timers.Timer();
         private int Last_Counts;
+        string[] plakalar;
         public void Db_User_Update()
         {
             try
@@ -42,7 +43,7 @@ namespace AracKiralamaWindowsService
             }
         }
 
-        public void Contract_Vehicle_Update()
+        public void Contract_Count()
         {
              try
             {
@@ -57,30 +58,84 @@ namespace AracKiralamaWindowsService
                     Last_Counts = int.Parse(Db_DataReader[0].ToString());
 
                 }
-                string[] plakalar = new string[Last_Counts];
-                SqlCommand VehiclePlate = new SqlCommand();
-                VehiclePlate.Connection = Db_Connection;
-                VehiclePlate.CommandText = "select VehiclePlate from ContractsList";
-                Db_DataReader = VehiclePlate.ExecuteReader();
+                Db_DataReader.Close();
+                Db_Connection.Close();
+
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Bitti");
+            }
+            catch (Exception ex)
+            {
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", ex.Message + " " + ex.StackTrace);
+            }
+        }
+
+        public void Vehicle_Search()
+        {
+            try
+            {
+                plakalar = new string[Last_Counts];
+                Console.WriteLine("Servis Başladı.");
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Başladı");
+                Db_Connection.Open();
+                Db_Query.Connection = Db_Connection;
+                Db_Query.CommandText = "select VehiclePlate from ContractsList Where ContractStatus='Aktif' ";
+                Db_DataReader = Db_Query.ExecuteReader();
                 while (Db_DataReader.Read())
                 {
-                    for (int i = 0; i < Last_Counts; i++)
+                    //Last_Counts = int.Parse(Db_DataReader[0].ToString());
+                    for (int i = 1; i < Last_Counts; i++)
                     {
                         plakalar[i] = Db_DataReader[0].ToString();
-                        SqlCommand Vehicle_Update = new SqlCommand();
-                        Vehicle_Update.Connection = Db_Connection;
-                        Vehicle_Update.CommandText = "UPDATE VehicleList SET VehicleStatus='Uygun' Where VehiclePlate='" + plakalar[i].ToString() + "'";
-                        Vehicle_Update.ExecuteNonQuery();
                     }
 
                 }
-                SqlCommand Contract_Update = new SqlCommand();
-                Contract_Update.Connection = Db_Connection;
-                Contract_Update.CommandText = "exec Contract_Count @Update_Time='Evet'";
-                Contract_Update.ExecuteNonQuery();
-                Db_Connection.Close();
                 Db_DataReader.Close();
+                Db_Connection.Close();
 
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Bitti");
+            }
+            catch (Exception ex)
+            {
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", ex.Message + " " + ex.StackTrace);
+            }
+        }
+
+        public void Vehicle_Update()
+        {
+            try
+            {
+                Console.WriteLine("Servis Başladı.");
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Başladı");
+                Db_Connection.Open();
+                Db_Query.Connection = Db_Connection;
+                for (int i = 0; i < plakalar.Length; i++)
+                {
+                    
+                    Db_Query.CommandText = "UPDATE VehicleList SET VehicleStatus = 'Uygun' Where VehiclePlate ='"+plakalar[i].ToString()+"'";
+                    Db_Query.ExecuteNonQuery();
+                }
+             
+                Db_Connection.Close();
+
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Bitti");
+            }
+            catch (Exception ex)
+            {
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", ex.Message + " " + ex.StackTrace);
+            }
+        }
+
+        public void Contract_Update()
+        {
+            try
+            {
+                Console.WriteLine("Servis Başladı.");
+                System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Başladı");
+                Db_Connection.Open();
+                Db_Query.Connection = Db_Connection;
+                Db_Query.CommandText = "exec Contract_Count @Update_Time='Evet'";
+                Db_Query.ExecuteNonQuery();
+                Db_Connection.Close();
 
                 System.IO.File.AppendAllText(@"C:\temp\hataservis.txt", "İşlem Bitti");
             }
@@ -104,7 +159,11 @@ namespace AracKiralamaWindowsService
         private void OnElapsedTime(object source, ElapsedEventArgs e)
         {
             //Db_User_Update();
-            Contract_Vehicle_Update();
+            Contract_Count();
+            Vehicle_Search();
+            Vehicle_Update();
+            Contract_Update();
+           
         }
 
 

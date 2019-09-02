@@ -190,7 +190,7 @@ namespace Araç_Kiralama_Takibi
             }
             else
             {
-                Contract_Operations.Query_Send("Update VehicleList SET VehicleStatus='Kiralık' Where VehiclePlate='" + Session["Vr_VehiclePlate"].ToString() + "'");
+                Contract_Operations.Query_Send("Update VehicleList SET VehicleStatus='Uygun' Where VehiclePlate='" + Session["Vr_VehiclePlate"].ToString() + "'");
                 Contract_Operations.Query_Send("Update ContractsList SET ContractStatus='Pasif' Where ContractID='" + Session["Vr_ContractID"].ToString() + "'");
                 Response.Redirect("SozlesmeYonetimi.aspx");
             }
